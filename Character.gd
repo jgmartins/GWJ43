@@ -45,6 +45,8 @@ export (bool) var sq_grabbed = false
 # Linear velocity
 var v : Vector2 = Vector2(0,0)
 
+func _ready():
+	$AnimationPlayer.play("Stand")
 
 func _draw():
 	if get_slide_count():
@@ -72,19 +74,20 @@ func _physics_process(delta):
 	# MOVING LEFT AND RIGHT
 	if Input.is_action_pressed("ui_left"):
 		v.x = clamp(v.x - H_ACCEL*delta, -MAX_H_VEL, 1.79769e308)
+		move_dir_change(true)
 	if Input.is_action_pressed("ui_right"):
 		v.x = clamp(v.x + H_ACCEL*delta, -1.79769e308, MAX_H_VEL)
+		move_dir_change(false)
 	
 	# BRAKING
 	if not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"):
 		brake(delta)
 	
 	# BRING CHARACTER TO ABSOLUTE STOP
-	if (abs(v.x) < 2):
+	if (abs(v.x) < 2) and v.x != 0:
+		stop()
 		v.x = 0
-	
-	
-	var oldv := position
+
 	# Actually move the character
 	v.y = move_and_slide_with_snap(v, snap_vector, Vector2.UP,true,4,deg2rad(70)).y
 	
@@ -100,7 +103,7 @@ func _physics_process(delta):
 			v.y = clamp(v.y, -179769e308, MAX_FALL_V)
 	
 	if SQUIRREL_MODE and is_on_wall():
-		v.y = 0
+		v = Vector2()
 
 # Changes linear velocity v to make character jump
 func jump() -> void:
@@ -130,3 +133,20 @@ func brake(delta : float) -> void:
 			brake_amt = DF_BRAKE_AIR
 			
 	v.x += brake_dir*brake_amt*delta
+	
+	if is_on_floor() and v.x != 0 and $AnimationPlayer.current_animation != "Brake":
+		$AnimationPlayer.play("Brake")
+
+func stop():
+	if $AnimationPlayer.current_animation != "Stand":
+		$AnimationPlayer.play("Stand")
+
+func move_dir_change(dir : bool):
+	for sprite in get_children():
+		if sprite is Sprite:
+			sprite.flip_h = dir
+	
+	if $AnimationPlayer.current_animation != "Run":
+		$AnimationPlayer.play("Run")
+
+
