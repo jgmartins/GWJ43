@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Test-Stand.png-28eec393ada40303600cc9b171957005.stex"
+path="res://.import/fill_texture.png-2fa05d57936354418ebb326300062167.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Test-Stand.png"
-dest_files=[ "res://.import/Test-Stand.png-28eec393ada40303600cc9b171957005.stex" ]
+source_file="res://graphics/fill_texture.png"
+dest_files=[ "res://.import/fill_texture.png-2fa05d57936354418ebb326300062167.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

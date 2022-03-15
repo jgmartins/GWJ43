@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Test-Stand.png-28eec393ada40303600cc9b171957005.stex"
+path="res://.import/snail-test.png-f1bed8ae6bdc0bdee2a15bcb250d475d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Test-Stand.png"
-dest_files=[ "res://.import/Test-Stand.png-28eec393ada40303600cc9b171957005.stex" ]
+source_file="res://graphics/snail-test.png"
+dest_files=[ "res://.import/snail-test.png-f1bed8ae6bdc0bdee2a15bcb250d475d.stex" ]
 
 [params]
 

@@ -55,7 +55,7 @@ func _draw():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	update()
+	#update()
 	# If the snap vector intersects the ground,
 	# the character will remain in contact with it when moving
 	var snap_vector := SNAP_VECTOR
