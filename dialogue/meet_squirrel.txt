@@ -1,0 +1,18 @@
+{
+	"characters": {
+		"squirrel": {"res" : "res://graphics/squirrel.png", "position": {"x": -107, "y": -10}, "size": {"x": 318, "y": 318}, "flip": false},
+		"snail": {"res" : "res://graphics/snail.png", "position": {"x": -107, "y": -10}, "size": {"x": 318, "y": 318}, "flip": true}
+	},
+	
+	"lines" : [
+		{"character": "squirrel", "text": "Oh, hi! I didn't see you there. Who are you?"},
+		{"character": "snail", "text": "Hey! I'm a snail! I'm trying to make my way to the sea."},
+		{"character": "squirrel", "text": "The sea, huh, that's awesome! I've never been, but I'm curious!"},
+		{"character": "snail", "text": "Do you want to join?"},
+		{"character": "squirrel", "text": "I would, but I would need some food for the road. There's a nut out here somewhere, but I haven't been able to find it yet."},
+		{"character": "snail", "text": "Will you come if I find it for you?"},
+		{"character": "squirrel", "text": "I sure would!"},
+		{"character": "snail", "text": "Ooooh, neat! I'll try to go find it for you!"},
+		{"character": "squirrel", "text": "Thanks!"}
+	]
+}

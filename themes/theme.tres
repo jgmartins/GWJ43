@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=4 format=2]
+
+[ext_resource path="res://themes/ReallyFree-ALwl7.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0.968627, 0.866667, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.772549, 0.662745, 0.372549, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color( 0, 0, 0, 0.215686 )
+shadow_size = 3
+shadow_offset = Vector2( 3, 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[resource]
+Panel/styles/panel = SubResource( 1 )
+RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
+RichTextLabel/fonts/normal_font = SubResource( 2 )

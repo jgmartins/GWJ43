@@ -174,6 +174,11 @@ config/name="GWJ43"
 run/main_scene="res://TestScene.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep_height"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/rmsmartshape/plugin.cfg" )
