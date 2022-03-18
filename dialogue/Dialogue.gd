@@ -22,7 +22,6 @@ func load_diag_from_file(file_location : String) -> void:
 	var file := File.new()
 	if file.open("res://dialogue/meet_squirrel.txt", file.READ) == OK:
 		var content = file.get_as_text()
-		print(content)
 		file.close()
 	
 		load_diag_from_JSON(JSON.parse(content).result)

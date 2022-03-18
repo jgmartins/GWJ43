@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snail-test2.png-6d7a07c5d2a7f57c31d3e85e3c583e8f.stex"
+path="res://.import/top_center.png-71f2a22a98f80e14f2c2fb73e3ed888f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/snail-test2.png"
-dest_files=[ "res://.import/snail-test2.png-6d7a07c5d2a7f57c31d3e85e3c583e8f.stex" ]
+source_file="res://graphics/terrain/top_center.png"
+dest_files=[ "res://.import/top_center.png-71f2a22a98f80e14f2c2fb73e3ed888f.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
-flags/filter=false
+flags/repeat=1
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
