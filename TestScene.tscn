@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/rmsmartshape/materials/shape_material.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" type="Script" id=12]
 [ext_resource path="res://addons/rmsmartshape/normal_range.gd" type="Script" id=13]
 [ext_resource path="res://graphics/terrain/top_left.png" type="Texture" id=14]
+[ext_resource path="res://Wind.gd" type="Script" id=15]
 
 [sub_resource type="Resource" id=91]
 script = ExtResource( 4 )
@@ -360,6 +361,9 @@ fill_texture_z_index = -10
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
+[sub_resource type="RectangleShape2D" id=134]
+extents = Vector2( 76, 126 )
+
 [node name="scene" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
@@ -388,3 +392,15 @@ modulate = Color( 1, 1, 1, 0.3 )
 polygon = PoolVector2Array( 958.002, 433.999, 963.635, 446.179, 973.647, 473.491, 975.397, 477.036, 977.463, 480.373, 979.931, 483.542, 982.907, 486.576, 986.497, 489.507, 990.813, 492.354, 1002.09, 496.769, 1002.29, 497.836, 1130.53, 491.729, 1121.64, 243.967, 1174.46, 240.307, 1174.16, 528.962, 1019.8, 539.423, 1033.86, 590.532, 747, 600.006, 435, 598.001, 190, 602.001, 144.765, 605.281, 141.632, 384.715, 230.831, 389.115, 247.973, 405.037, 257.839, 411.624, 268.879, 417.372, 274.722, 419.674, 280.723, 421.438, 286.832, 422.569, 293, 422.976, 299.233, 422.708, 305.554, 421.921, 318.45, 419.17, 345.124, 411.23, 372.727, 404.368, 386.802, 403.037, 393.889, 403.177, 401.003, 403.947, 408.011, 405.456, 414.804, 407.679, 421.426, 410.521, 427.931, 413.878, 480.321, 449.495, 495.077, 457.58, 502.933, 461.021, 511.169, 463.932, 519.811, 466.207, 528.848, 467.811, 547.991, 469.268, 568.375, 468.759, 589.78, 466.713, 681.145, 452.242, 702.256, 447.739, 711.355, 444.71, 719.601, 441.163, 727.089, 437.135, 733.914, 432.645, 740.166, 427.716, 745.934, 422.359, 756.413, 410.485, 766.097, 397.192, 785.996, 366.997, 806.109, 339.471, 815.443, 329.101, 824.735, 320.857, 829.472, 317.504, 834.313, 314.633, 839.307, 312.24, 844.495, 310.313, 849.918, 308.838, 855.615, 307.802, 861.629, 307.192, 878.373, 309.626, 884.48, 313.159, 887.773, 315.706, 894.311, 321.908, 900.766, 329.399, 907.121, 337.949, 919.391, 357.366 )
 
 [node name="Dialogue" parent="." instance=ExtResource( 9 )]
+
+[node name="Wind" type="Area2D" parent="."]
+position = Vector2( 904, 373 )
+script = ExtResource( 15 )
+direction = -180
+strength = 2000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind"]
+shape = SubResource( 134 )
+
+[connection signal="body_entered" from="Wind" to="Wind" method="_on_Wind_body_entered"]
+[connection signal="body_exited" from="Wind" to="Wind" method="_on_Wind_body_exited"]

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+class_name Character
 
 
 # Vertical velocity to set when jumping, e.g. 300 px/s
@@ -42,6 +42,10 @@ export (int) var gt_jumps_left = 0
 export (bool) var SQUIRREL_MODE = true
 export (bool) var sq_grabbed = false
 
+# External forces
+
+var _external_forces : Array = []
+
 # Linear velocity
 var v : Vector2 = Vector2(0,0)
 
@@ -73,21 +77,27 @@ func _physics_process(delta):
 	
 	# MOVING LEFT AND RIGHT
 	if Input.is_action_pressed("ui_left"):
-		v.x = clamp(v.x - H_ACCEL*delta, -MAX_H_VEL, 1.79769e308)
+		v.x = v.x - H_ACCEL*delta
 		move_dir_change(true)
 	if Input.is_action_pressed("ui_right"):
-		v.x = clamp(v.x + H_ACCEL*delta, -1.79769e308, MAX_H_VEL)
+		v.x = v.x + H_ACCEL*delta
 		move_dir_change(false)
 	
 	# BRAKING
 	if not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"):
 		brake(delta)
 	
-	# BRING CHARACTER TO ABSOLUTE STOP
+	# APPLY EXTENRAL FORCES
+	for force in _external_forces:
+		v += force.get_force(self)*delta
+	
+	# BRING CHARACTER TO ABSOLUTE STOP IN HORIZONTAL DIMENSION
 	if (abs(v.x) < 2) and v.x != 0:
 		stop()
 		v.x = 0
 
+	v.x = clamp(v.x, -MAX_H_VEL, MAX_H_VEL)
+	
 	# Actually move the character
 	v.y = move_and_slide_with_snap(v, snap_vector, Vector2.UP,true,4,deg2rad(70)).y
 	
@@ -149,4 +159,9 @@ func move_dir_change(dir : bool):
 	if $AnimationPlayer.current_animation != "Run":
 		$AnimationPlayer.play("Run")
 
+func add_external_force(force):
+	_external_forces.append(force)
+
+func remove_external_force(force):
+	_external_forces.erase(force)
 
