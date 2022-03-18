@@ -72,6 +72,11 @@ func _process(delta):
 			go_to_line(_line + 1)
 		return
 	
+	# Not paused but key pressed, finish this line
+	if Input.is_action_just_pressed("ui_accept"):
+		$BG/RichTextLabel.percent_visible = 1
+		paused = true
+		return
 	
 	_tlc = _tlc + delta
 	if _tlc > SECONDS_PER_CHARACTER:
