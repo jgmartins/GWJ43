@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
-"path": "res://Character.gd"
+"path": "res://Scenes/Character.gd"
 }, {
 "base": "Resource",
 "class": "RMS2D_Material",
@@ -182,6 +182,8 @@ config/icon="res://icon.png"
 
 [display]
 
+window/size/width=1600
+window/size/height=900
 window/stretch/mode="2d"
 window/stretch/aspect="keep_height"
 

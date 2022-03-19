@@ -32,7 +32,7 @@ margin_left = -107.0
 margin_top = -10.0
 margin_right = 211.0
 margin_bottom = 308.0
-rect_rotation = -3.36813
+rect_rotation = -5.0
 rect_pivot_offset = Vector2( 159, 159 )
 texture = ExtResource( 2 )
 expand = true
@@ -41,21 +41,19 @@ flip_h = true
 [node name="BG" type="Panel" parent="."]
 margin_left = 159.0
 margin_top = -2.0
-margin_right = 959.0
+margin_right = 725.0
 margin_bottom = 198.0
 theme = ExtResource( 3 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BG"]
 margin_left = 21.0
 margin_top = 17.0
-margin_right = 780.0
+margin_right = 542.0
 margin_bottom = 180.0
 theme = ExtResource( 3 )
 bbcode_enabled = true
-bbcode_text = "Hello, my name is squirrel. I'd love to come with you today!
-"
-text = "Hello, my name is squirrel. I'd love to come with you today!
-"
+bbcode_text = "ERROR LOADING TEXT"
+text = "ERROR LOADING TEXT"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/wiggle = SubResource( 1 )

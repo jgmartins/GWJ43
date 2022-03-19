@@ -1,0 +1,345 @@
+[gd_scene load_steps=55 format=2]
+
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 10.png" type="Texture" id=1]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 9.png" type="Texture" id=2]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 4.png" type="Texture" id=3]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 5.png" type="Texture" id=4]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 2.png" type="Texture" id=5]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 6.png" type="Texture" id=6]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 3.png" type="Texture" id=7]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 1.png" type="Texture" id=8]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 7.png" type="Texture" id=9]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 8.png" type="Texture" id=10]
+[ext_resource path="res://addons/rmsmartshape/shapes/shape_closed.gd" type="Script" id=11]
+[ext_resource path="res://Levels/GrassyTerrainShapeMaterial.tres" type="Resource" id=12]
+[ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=13]
+[ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=14]
+[ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=15]
+[ext_resource path="res://Levels/Parallax.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/MainSceneSnail.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Levels/FollowScript.gd" type="Script" id=18]
+[ext_resource path="res://dialogue/Dialogue.tscn" type="PackedScene" id=19]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Resource" id=36]
+script = ExtResource( 13 )
+texture_idx = 3
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=37]
+script = ExtResource( 15 )
+position = Vector2( 194.757, 663.687 )
+point_in = Vector2( -99.5562, 37.4577 )
+point_out = Vector2( 106.299, -10.4881 )
+properties = SubResource( 36 )
+
+[sub_resource type="Resource" id=38]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=39]
+script = ExtResource( 15 )
+position = Vector2( 1089.66, 729.265 )
+point_in = Vector2( -199.798, -8.97968 )
+point_out = Vector2( 199.798, 8.97968 )
+properties = SubResource( 38 )
+
+[sub_resource type="Resource" id=40]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=41]
+script = ExtResource( 15 )
+position = Vector2( 704.243, 722.026 )
+point_in = Vector2( -94.2869, -2.24487 )
+point_out = Vector2( 94.2869, 2.24487 )
+properties = SubResource( 40 )
+
+[sub_resource type="Resource" id=42]
+script = ExtResource( 13 )
+texture_idx = 3
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=43]
+script = ExtResource( 15 )
+position = Vector2( 194.757, 663.687 )
+point_in = Vector2( -99.5562, 37.4577 )
+point_out = Vector2( 106.299, -10.4881 )
+properties = SubResource( 42 )
+
+[sub_resource type="Resource" id=44]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=45]
+script = ExtResource( 15 )
+position = Vector2( 1429.85, 695.1 )
+point_in = Vector2( -142.553, 1.12244 )
+point_out = Vector2( 142.553, -1.12244 )
+properties = SubResource( 44 )
+
+[sub_resource type="Resource" id=46]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=47]
+script = ExtResource( 15 )
+position = Vector2( 438.66, 713.878 )
+point_in = Vector2( -76.3275, -1.12256 )
+point_out = Vector2( 76.3275, 1.12256 )
+properties = SubResource( 46 )
+
+[sub_resource type="Resource" id=48]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=49]
+script = ExtResource( 15 )
+position = Vector2( 1652.07, 716.369 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 48 )
+
+[sub_resource type="Resource" id=50]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=51]
+script = ExtResource( 15 )
+position = Vector2( 1640.76, 939.815 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 50 )
+
+[sub_resource type="Resource" id=52]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=53]
+script = ExtResource( 15 )
+position = Vector2( 1089.22, 1024.67 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 52 )
+
+[sub_resource type="Resource" id=54]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=55]
+script = ExtResource( 15 )
+position = Vector2( 503.733, 1013.35 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 54 )
+
+[sub_resource type="Resource" id=56]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=57]
+script = ExtResource( 15 )
+position = Vector2( 56.8419, 996.383 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 56 )
+
+[sub_resource type="Resource" id=58]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=59]
+script = ExtResource( 15 )
+position = Vector2( -61.952, 945.472 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 58 )
+
+[sub_resource type="Resource" id=60]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=61]
+script = ExtResource( 15 )
+position = Vector2( -44.9814, 696.57 )
+point_in = Vector2( -40.4086, -1.12256 )
+point_out = Vector2( 40.4086, 1.12256 )
+properties = SubResource( 60 )
+
+[sub_resource type="Resource" id=62]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=63]
+script = ExtResource( 15 )
+position = Vector2( 571.407, 1014.41 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 62 )
+
+[sub_resource type="Resource" id=64]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=65]
+script = ExtResource( 15 )
+position = Vector2( 326.493, 1008.25 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 64 )
+
+[sub_resource type="Resource" id=66]
+script = ExtResource( 13 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=67]
+script = ExtResource( 15 )
+position = Vector2( -67.2846, 832.739 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 66 )
+
+[sub_resource type="Resource" id=68]
+script = ExtResource( 14 )
+_points = {
+0: SubResource( 37 ),
+1: SubResource( 39 ),
+2: SubResource( 41 ),
+3: SubResource( 43 ),
+4: SubResource( 45 ),
+5: SubResource( 47 ),
+6: SubResource( 49 ),
+7: SubResource( 51 ),
+8: SubResource( 53 ),
+9: SubResource( 55 ),
+10: SubResource( 57 ),
+11: SubResource( 59 ),
+12: SubResource( 61 ),
+13: SubResource( 63 ),
+14: SubResource( 65 ),
+15: SubResource( 67 )
+}
+_point_order = [ 3, 5, 2, 1, 4, 6, 7, 8, 13, 9, 14, 10, 11, 15, 12, 0 ]
+_constraints = {
+[ 0, 3 ]: 15
+}
+_next_key = 16
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 10, 77.5 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -230, 542 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+script = ExtResource( 18 )
+EDITOR_MOVE_TO_POSITION = true
+desired_offset = Vector2( 274, -124 )
+TARGET_NODE = NodePath("../Snail")
+
+[node name="Background" type="AnimatedSprite" parent="Camera2D"]
+position = Vector2( 189, -48.6667 )
+scale = Vector2( 0.312585, 0.312585 )
+z_index = -4
+frames = SubResource( 1 )
+speed_scale = 0.1
+script = ExtResource( 16 )
+PARALLAX_AMNT = Vector2( 200, 100 )
+TARGET_NODE = NodePath("../../Snail")
+
+[node name="Snail" parent="." instance=ExtResource( 17 )]
+position = Vector2( 44, 666 )
+
+[node name="Sprite" parent="Snail" index="0"]
+z_index = -1
+
+[node name="Particles2D" parent="Snail" index="3"]
+position = Vector2( 22, 24 )
+z_index = 3
+lifetime = 2.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, -2 )
+
+[node name="SS2D_Shape_Closed" type="Node2D" parent="StaticBody2D"]
+script = ExtResource( 11 )
+_points = SubResource( 68 )
+material_overrides = {
+}
+shape_material = ExtResource( 12 )
+tessellation_stages = 5
+tessellation_tolerence = 4.0
+flip_edges = false
+render_edges = true
+collision_size = 32.0
+collision_offset = 0.0
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+modulate = Color( 1, 1, 1, 0.3 )
+polygon = PoolVector2Array( 194.732, 663.558, 214.175, 662.498, 232.627, 662.764, 266.983, 666.919, 298.521, 674.65, 327.948, 684.427, 383.303, 704.07, 410.629, 710.949, 424.512, 713, 438.66, 713.876, 704.243, 722.026, 1089.66, 729.263, 1207.05, 727.83, 1281.22, 715.965, 1344.65, 702.16, 1382.5, 697.245, 1429.85, 695.089, 1524.71, 697.938, 1594.42, 705.3, 1655.16, 713.944, 1643.43, 942.225, 1089.22, 1024.73, 571.407, 1014.41, 503.733, 1013.35, 326.493, 1008.25, 56.7841, 996.636, -63.9552, 946.862, -67.2849, 832.739, -71.314, 764.233, -69.8122, 739.16, -68.0769, 727.651, -47.3549, 697.013, 52.7049, 694.566, 120.976, 684.767, 157.526, 675.888 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -38, 637.5 )
+shape = SubResource( 35 )
+
+[node name="Control" parent="." instance=ExtResource( 19 )]
+margin_left = -660.0
+margin_top = 594.0
+margin_right = 140.0
+margin_bottom = 814.0
+DIALOGUE_RESOURCE = "res://Levels/StartSceneDiag.txt"
+
+[node name="BG" parent="Control" index="1"]
+margin_right = 707.0
+margin_bottom = 144.0
+
+[node name="RichTextLabel" parent="Control/BG" index="0"]
+margin_right = 547.0
+
+[connection signal="dialogue_ended" from="Control" to="Camera2D/Background" method="start_playing"]
+
+[editable path="Snail"]
+[editable path="Control"]

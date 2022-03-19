@@ -1,6 +1,8 @@
 extends Control
 
 export (float, 0, 0.15) var SECONDS_PER_CHARACTER := 0.05 # Seconds per character
+
+export (String) var DIALOGUE_RESOURCE
 var _tlc := 0.0 # Time since last character
 
 var paused := false
@@ -9,22 +11,29 @@ var _line := 0
 var characters = {}
 var lines = []
 
+signal dialogue_ended
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rect_size = Vector2( OS.get_screen_size().x, 200)
 	$BG/RichTextLabel.visible_characters = 0
 	
-	load_diag_from_file("res://dialogue/meet_squirrel.txt")
+	print(DIALOGUE_RESOURCE)
+	load_diag_from_file(DIALOGUE_RESOURCE)
 	
 	$AnimationPlayer.play("wiggle")
 	
 func load_diag_from_file(file_location : String) -> void:
 	var file := File.new()
-	if file.open("res://dialogue/meet_squirrel.txt", file.READ) == OK:
+	if file.open(file_location, file.READ) == OK:
 		var content = file.get_as_text()
 		file.close()
-	
-		load_diag_from_JSON(JSON.parse(content).result)
+		
+		var res := JSON.parse(content)
+		if res.error != OK:
+			print(res.error_string)
+		else:
+			load_diag_from_JSON(res.result)
 	else:
 		print("ERROR: Could not load dialogue from '%s'" % file_location)
 
@@ -45,6 +54,7 @@ func go_to_line(line_number : int) -> void:
 	
 	# If dialogue is done, we destroy this object.
 	if _line >= len(lines):
+		emit_signal("dialogue_ended")
 		queue_free()
 		return
 	

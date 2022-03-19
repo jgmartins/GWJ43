@@ -1,0 +1,14 @@
+{
+	"characters": {
+		"snail_l": {"res" : "res://graphics/snail.png", "position": {"x": -15, "y": -10}, "size": {"x": 318, "y": 318}, "flip": false},
+		"snail_r": {"res" : "res://graphics/snail.png", "position": {"x": -107, "y": -10}, "size": {"x": 318, "y": 318}, "flip": true}
+	},
+	
+	"lines" : [
+		{"character": "snail_l", "text": "Wow, I guess it really is time to go."},
+		{"character": "snail_l", "text": "..."},
+		{"character": "snail_r", "text": "I've never been to the sea, but that's where I'm feeling called to."},
+		{"character": "snail_l", "text": "..."},
+		{"character": "snail_r", "text": "It's getting light, I guess I better get going."}
+	]
+}
