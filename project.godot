@@ -177,7 +177,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GWJ43"
-run/main_scene="res://TestScene.tscn"
+run/main_scene="res://Levels/Start.tscn"
 config/icon="res://icon.png"
 
 [display]
