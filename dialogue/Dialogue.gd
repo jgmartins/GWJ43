@@ -1,4 +1,5 @@
 extends Control
+class_name Dialogue
 
 export (float, 0, 0.15) var SECONDS_PER_CHARACTER := 0.05 # Seconds per character
 
@@ -17,11 +18,14 @@ signal dialogue_ended
 func _ready():
 	rect_size = Vector2( OS.get_screen_size().x, 200)
 	$BG/RichTextLabel.visible_characters = 0
-	
-	print(DIALOGUE_RESOURCE)
-	load_diag_from_file(DIALOGUE_RESOURCE)
+	if DIALOGUE_RESOURCE:
+		run_diag_from_file(DIALOGUE_RESOURCE)
 	
 	$AnimationPlayer.play("wiggle")
+
+func run_diag_from_file(file_location : String) -> void:
+	load_diag_from_file(file_location)
+	start_dialogue()
 	
 func load_diag_from_file(file_location : String) -> void:
 	var file := File.new()
@@ -48,14 +52,12 @@ func load_diag_from_JSON(json : Dictionary) -> void:
 	go_to_line(0)
 
 
-
 func go_to_line(line_number : int) -> void:
 	_line = line_number
 	
 	# If dialogue is done, we destroy this object.
 	if _line >= len(lines):
-		emit_signal("dialogue_ended")
-		queue_free()
+		end_dialogue()
 		return
 	
 	$BG/RichTextLabel.bbcode_text = lines[_line]["text"]
@@ -64,6 +66,19 @@ func go_to_line(line_number : int) -> void:
 	switch_speaker_sprite()
 	
 	paused = false
+
+func start_dialogue():
+	visible = true
+	paused = false
+
+func end_dialogue():
+	emit_signal("dialogue_ended")
+	self.visible = false
+	
+	# Disconnect all signals
+	for s in get_signal_connection_list("dialogue_ended"):
+		disconnect(s.signal, s.target, s.method)
+	print(get_signal_connection_list("dialogue_ended"))
 
 func current_character() -> Dictionary:
 	return characters[lines[_line]["character"]]
@@ -77,6 +92,9 @@ func switch_speaker_sprite() -> void:
 	ctr.flip_h = c["flip"]
 
 func _process(delta):
+	if visible == false:
+		return
+	
 	if paused:
 		if Input.is_action_just_pressed("ui_accept"):
 			go_to_line(_line + 1)

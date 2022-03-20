@@ -6,13 +6,13 @@ export var VEL : float = 2000
 
 export var particle_offset = Vector2(22, 24)
 
+var movement_enabled
+
 func _ready():
-	$AnimationPlayer.play("wiggle")
-	
+	set_physics_process(false)
 
 
 func _physics_process(delta):
-	
 	var dir := Vector2(0, 0)
 	
 	if Input.is_action_pressed("ui_left"):
@@ -43,3 +43,15 @@ func _turned_right(is_right : bool) -> void:
 	if is_right:
 		particle_pos = particle_pos * Vector2(-1, 1)
 	$Particles2D.position = particle_pos
+
+
+func enable_movement(enable : bool) :
+	set_physics_process(enable)
+
+func restart_after_dialogue(diag : Dialogue) :
+	enable_movement(false)
+	if diag.connect("dialogue_ended", self, "enable_movement", [true]) != OK:
+		print("ERROR connecting \"dialogue_ended\"")
+	
+func _on_Control_dialogue_ended():
+	$Sprite.playing = true

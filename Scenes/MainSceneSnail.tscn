@@ -1,8 +1,57 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Scenes/MainScreenSnail.gd" type="Script" id=1]
-[ext_resource path="res://graphics/snail.png" type="Texture" id=2]
+[ext_resource path="res://graphics/put-on-shell/frame6.png" type="Texture" id=2]
 [ext_resource path="res://graphics/trail.png" type="Texture" id=3]
+[ext_resource path="res://graphics/put-on-shell/frame2.png" type="Texture" id=4]
+[ext_resource path="res://graphics/put-on-shell/frame3.png" type="Texture" id=5]
+[ext_resource path="res://graphics/put-on-shell/frame5.png" type="Texture" id=6]
+[ext_resource path="res://graphics/put-on-shell/frame4.png" type="Texture" id=7]
+[ext_resource path="res://graphics/put-on-shell/frame7.png" type="Texture" id=8]
+[ext_resource path="res://graphics/put-on-shell/frame8.png" type="Texture" id=9]
+[ext_resource path="res://graphics/put-on-shell/frame9.png" type="Texture" id=10]
+[ext_resource path="res://graphics/put-on-shell/frame1.png" type="Texture" id=11]
+[ext_resource path="res://graphics/put-on-shell/frame29.png" type="Texture" id=12]
+[ext_resource path="res://graphics/put-on-shell/frame33.png" type="Texture" id=13]
+[ext_resource path="res://graphics/put-on-shell/frame35.png" type="Texture" id=14]
+[ext_resource path="res://graphics/put-on-shell/frame28.png" type="Texture" id=15]
+[ext_resource path="res://graphics/put-on-shell/frame17.png" type="Texture" id=16]
+[ext_resource path="res://graphics/put-on-shell/frame18.png" type="Texture" id=17]
+[ext_resource path="res://graphics/put-on-shell/frame42.png" type="Texture" id=18]
+[ext_resource path="res://graphics/put-on-shell/frame30.png" type="Texture" id=19]
+[ext_resource path="res://graphics/put-on-shell/frame21.png" type="Texture" id=20]
+[ext_resource path="res://graphics/put-on-shell/frame36.png" type="Texture" id=21]
+[ext_resource path="res://graphics/put-on-shell/frame37.png" type="Texture" id=22]
+[ext_resource path="res://graphics/put-on-shell/frame16.png" type="Texture" id=23]
+[ext_resource path="res://graphics/put-on-shell/frame10.png" type="Texture" id=24]
+[ext_resource path="res://graphics/put-on-shell/frame26.png" type="Texture" id=25]
+[ext_resource path="res://graphics/put-on-shell/frame22.png" type="Texture" id=26]
+[ext_resource path="res://graphics/put-on-shell/frame20.png" type="Texture" id=27]
+[ext_resource path="res://graphics/put-on-shell/frame27.png" type="Texture" id=28]
+[ext_resource path="res://graphics/put-on-shell/frame34.png" type="Texture" id=29]
+[ext_resource path="res://graphics/put-on-shell/frame25.png" type="Texture" id=30]
+[ext_resource path="res://graphics/put-on-shell/frame32.png" type="Texture" id=31]
+[ext_resource path="res://graphics/put-on-shell/frame41.png" type="Texture" id=32]
+[ext_resource path="res://graphics/put-on-shell/frame13.png" type="Texture" id=33]
+[ext_resource path="res://graphics/put-on-shell/frame14.png" type="Texture" id=34]
+[ext_resource path="res://graphics/put-on-shell/frame11.png" type="Texture" id=35]
+[ext_resource path="res://graphics/put-on-shell/frame12.png" type="Texture" id=36]
+[ext_resource path="res://graphics/put-on-shell/frame24.png" type="Texture" id=37]
+[ext_resource path="res://graphics/put-on-shell/frame23.png" type="Texture" id=38]
+[ext_resource path="res://graphics/put-on-shell/frame38.png" type="Texture" id=39]
+[ext_resource path="res://graphics/put-on-shell/frame31.png" type="Texture" id=40]
+[ext_resource path="res://graphics/put-on-shell/frame39.png" type="Texture" id=41]
+[ext_resource path="res://graphics/put-on-shell/frame40.png" type="Texture" id=42]
+[ext_resource path="res://graphics/put-on-shell/frame15.png" type="Texture" id=43]
+[ext_resource path="res://graphics/put-on-shell/frame19.png" type="Texture" id=44]
+
+[sub_resource type="SpriteFrames" id=124]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 24 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 43 ), ExtResource( 23 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 44 ), ExtResource( 27 ), ExtResource( 20 ), ExtResource( 26 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 19 ), ExtResource( 40 ), ExtResource( 31 ), ExtResource( 13 ), ExtResource( 29 ), ExtResource( 14 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 32 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="CapsuleShape2D" id=80]
 radius = 28.9998
@@ -39,14 +88,17 @@ orbit_velocity_random = 0.0
 scale = 1.5
 color_ramp = SubResource( 123 )
 
-[node name="Snail" type="KinematicBody2D"]
+[node name="Snail" type="KinematicBody2D" groups=["Player"]]
 position = Vector2( 946, 410 )
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1.99999, -5.00001 )
 scale = Vector2( 2.13333, 2.13333 )
-texture = ExtResource( 2 )
+frames = SubResource( 124 )
+frame = 41
+speed_scale = 1.5
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, -3 )

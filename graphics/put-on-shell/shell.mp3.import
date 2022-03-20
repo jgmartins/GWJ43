@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/shell.mp3-72fc2863d6d78b4e4d833612232802e5.mp3str"
+
+[deps]
+
+source_file="res://graphics/put-on-shell/shell.mp3"
+dest_files=[ "res://.import/shell.mp3-72fc2863d6d78b4e4d833612232802e5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

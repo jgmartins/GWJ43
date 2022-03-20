@@ -9,6 +9,6 @@
 		{"character": "snail_l", "text": "..."},
 		{"character": "snail_r", "text": "I've never been to the sea, but that's where I'm feeling called to."},
 		{"character": "snail_l", "text": "..."},
-		{"character": "snail_r", "text": "It's getting light, I guess I better get going."}
+		{"character": "snail_r", "text": "It's getting light, I guess I better get dressed and get going."}
 	]
 }
