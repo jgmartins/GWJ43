@@ -1,0 +1,284 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 9.png" type="Texture" id=2]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 4.png" type="Texture" id=3]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 6.png" type="Texture" id=4]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 3.png" type="Texture" id=5]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 5.png" type="Texture" id=6]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 10.png" type="Texture" id=7]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 1.png" type="Texture" id=8]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 2.png" type="Texture" id=9]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 8.png" type="Texture" id=10]
+[ext_resource path="res://graphics/backgrounds/sunrise/sunrise 7.png" type="Texture" id=11]
+[ext_resource path="res://addons/rmsmartshape/shapes/shape_closed.gd" type="Script" id=12]
+[ext_resource path="res://Levels/Parallax.gd" type="Script" id=13]
+[ext_resource path="res://Levels/FollowScript.gd" type="Script" id=14]
+[ext_resource path="res://Levels/GrassyTerrainShapeMaterial.tres" type="Resource" id=15]
+[ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=16]
+[ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=17]
+[ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=18]
+[ext_resource path="res://dialogue/Dialogue.tscn" type="PackedScene" id=19]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "wiggle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Character:rect_rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -5.0, 5.0, -5.0 ]
+}
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 17 )
+position = Vector2( 1652.07, 716.369 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 3 )
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 17 )
+position = Vector2( 1640.76, 939.815 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 5 )
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 17 )
+position = Vector2( 1652.07, 716.369 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 7 )
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 17 )
+position = Vector2( 9.22302, 725.329 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 9 )
+
+[sub_resource type="Resource" id=11]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=12]
+script = ExtResource( 17 )
+position = Vector2( -13.0005, 928.516 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 11 )
+
+[sub_resource type="Resource" id=13]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=14]
+script = ExtResource( 17 )
+position = Vector2( 67.3793, 718.139 )
+point_in = Vector2( -28.9782, -7.55951 )
+point_out = Vector2( 224.266, -30.2382 )
+properties = SubResource( 13 )
+
+[sub_resource type="Resource" id=15]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=16]
+script = ExtResource( 17 )
+position = Vector2( 1612.93, 716.607 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 15 )
+
+[sub_resource type="Resource" id=17]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=18]
+script = ExtResource( 17 )
+position = Vector2( 738.542, 731.726 )
+point_in = Vector2( -210.407, -3.77979 )
+point_out = Vector2( 210.407, 3.77979 )
+properties = SubResource( 17 )
+
+[sub_resource type="Resource" id=19]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=20]
+script = ExtResource( 17 )
+position = Vector2( 485.187, 716.592 )
+point_in = Vector2( -71.9187, -5.24414 )
+point_out = Vector2( 71.9187, 5.24414 )
+properties = SubResource( 19 )
+
+[sub_resource type="Resource" id=21]
+script = ExtResource( 18 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=22]
+script = ExtResource( 17 )
+position = Vector2( 1182.63, 702.087 )
+point_in = Vector2( -234.274, 1.18921 )
+point_out = Vector2( 234.274, -1.18921 )
+properties = SubResource( 21 )
+
+[sub_resource type="Resource" id=23]
+script = ExtResource( 16 )
+_points = {
+6: SubResource( 4 ),
+7: SubResource( 6 ),
+20: SubResource( 8 ),
+21: SubResource( 10 ),
+22: SubResource( 12 ),
+23: SubResource( 14 ),
+24: SubResource( 16 ),
+25: SubResource( 18 ),
+26: SubResource( 20 ),
+27: SubResource( 22 )
+}
+_point_order = [ 6, 7, 22, 21, 23, 26, 25, 27, 24, 20 ]
+_constraints = {
+[ 6, 20 ]: 15
+}
+_next_key = 28
+
+[node name="Level" type="Node2D"]
+
+[node name="Character" parent="." groups=["Player"] instance=ExtResource( 1 )]
+position = Vector2( 233, 682 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 183, 607 )
+z_index = 3
+current = true
+zoom = Vector2( 0.5, 0.5 )
+script = ExtResource( 14 )
+EDITOR_MOVE_TO_POSITION = true
+LERP_SPEED = 5.0
+desired_offset = Vector2( 50, -75 )
+TARGET_NODE = NodePath("../Character")
+
+[node name="Background" type="AnimatedSprite" parent="Camera2D"]
+position = Vector2( 141.75, -51.037 )
+scale = Vector2( 0.312585, 0.312585 )
+z_index = -1000
+frames = SubResource( 1 )
+speed_scale = 0.1
+script = ExtResource( 13 )
+PARALLAX_AMNT = Vector2( 200, 100 )
+TARGET_NODE = NodePath("../../Character")
+
+[node name="Dialogue" parent="Camera2D" instance=ExtResource( 19 )]
+visible = false
+margin_left = -430.0
+margin_top = 52.0
+margin_right = 370.0
+margin_bottom = 272.0
+DIALOGUE_RESOURCE = "res://Levels/StartSceneDiag.txt"
+
+[node name="Character" parent="Camera2D/Dialogue" index="0"]
+rect_rotation = 1.96
+
+[node name="BG" parent="Camera2D/Dialogue" index="1"]
+margin_right = 631.0
+margin_bottom = 144.0
+
+[node name="RichTextLabel" parent="Camera2D/Dialogue/BG" index="0"]
+margin_right = 476.0
+margin_bottom = 130.0
+
+[node name="VScrollBar2" type="VScrollBar" parent="Camera2D/Dialogue/BG/RichTextLabel" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+max_value = 41.0
+step = 1.0
+page = 113.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="Camera2D/Dialogue/BG/RichTextLabel" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="AnimationPlayer" parent="Camera2D/Dialogue" index="2"]
+anims/wiggle = SubResource( 2 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 0, -2 )
+
+[node name="SS2D_Shape_Closed" type="Node2D" parent="Ground"]
+z_index = -1
+script = ExtResource( 12 )
+_points = SubResource( 23 )
+material_overrides = {
+}
+shape_material = ExtResource( 15 )
+tessellation_stages = 7
+tessellation_tolerence = 4.0
+flip_edges = false
+render_edges = true
+collision_size = 32.0
+collision_offset = 0.0
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+visible = false
+modulate = Color( 1, 1, 1, 0.3 )
+polygon = PoolVector2Array( 1655.69, 712.905, 1643.81, 943.045, -16.9426, 932.026, 10.4593, 723.063, 27.4284, 718.876, 36.2408, 717.072, 46.066, 716.043, 56.5623, 716.254, 61.9531, 716.961, 67.3903, 717.956, 217.16, 704.388, 333.414, 704.045, 485.187, 716.591, 738.543, 731.712, 863.751, 728.839, 1044, 707.74, 1182.63, 702.076, 1612.93, 716.604 )
+
+[connection signal="dialogue_ended" from="Camera2D/Dialogue" to="Camera2D/Background" method="start_playing"]
+
+[editable path="Camera2D/Dialogue"]

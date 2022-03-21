@@ -272,7 +272,7 @@ extents = Vector2( 69.5, 77 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sign" type="Sprite" parent="."]
 position = Vector2( 1151, 666 )
 z_index = -1
 texture = ExtResource( 20 )
@@ -303,6 +303,10 @@ margin_top = 52.0
 margin_right = 370.0
 margin_bottom = 272.0
 DIALOGUE_RESOURCE = "res://Levels/StartSceneDiag.txt"
+run_on_start = true
+
+[node name="Character" parent="Camera2D/Dialogue" index="0"]
+rect_rotation = 1.96
 
 [node name="BG" parent="Camera2D/Dialogue" index="1"]
 margin_right = 631.0

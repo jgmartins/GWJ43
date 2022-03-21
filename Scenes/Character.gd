@@ -127,12 +127,14 @@ func jump() -> void:
 		# If we have cricket parts, add to jump strength
 		if CRICKET_MODE:
 			v.y -= CRICKET_JUMP
+		$AnimationPlayer.play("Jump")
 	elif GOAT_MODE and gt_jumps_left > 0: # not on floor, goat mode and jumps left!'
 		# If we're off the ground, but have goat jumps left, we can jump again!
 		gt_jumps_left = gt_jumps_left - 1
 		v.y = -JUMP
 		if CRICKET_MODE:
 			v.y -= CRICKET_JUMP
+		$AnimationPlayer.play("Jump")
 
 func brake(delta : float) -> void:
 	var brake_dir := -sign(v.x)
@@ -144,8 +146,10 @@ func brake(delta : float) -> void:
 			
 	v.x += brake_dir*brake_amt*delta
 	
-	if is_on_floor() and v.x != 0 and $AnimationPlayer.current_animation != "Brake":
-		$AnimationPlayer.play("Brake")
+	if is_on_floor() and v.x < 0 and $AnimationPlayer.current_animation != "Brake_L":
+		$AnimationPlayer.play("Brake_L")
+	elif is_on_floor() and v.x > 0 and $AnimationPlayer.current_animation != "Brake_R":
+		$AnimationPlayer.play("Brake_R")
 
 func stop():
 	if $AnimationPlayer.current_animation != "Stand":
@@ -154,10 +158,10 @@ func stop():
 func move_dir_change(dir : bool):
 	for sprite in get_children():
 		if sprite is Sprite:
-			sprite.flip_h = dir
+			sprite.flip_h = not dir
 	
-	if $AnimationPlayer.current_animation != "Run":
-		$AnimationPlayer.play("Run")
+	if $AnimationPlayer.current_animation != "Move":
+		$AnimationPlayer.play("Move")
 
 func add_external_force(force):
 	_external_forces.append(force)

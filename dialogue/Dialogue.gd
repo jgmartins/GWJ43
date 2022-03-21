@@ -4,6 +4,9 @@ class_name Dialogue
 export (float, 0, 0.15) var SECONDS_PER_CHARACTER := 0.05 # Seconds per character
 
 export (String) var DIALOGUE_RESOURCE
+
+export var run_on_start := false
+
 var _tlc := 0.0 # Time since last character
 
 var paused := false
@@ -19,7 +22,9 @@ func _ready():
 	rect_size = Vector2( OS.get_screen_size().x, 200)
 	$BG/RichTextLabel.visible_characters = 0
 	if DIALOGUE_RESOURCE:
-		run_diag_from_file(DIALOGUE_RESOURCE)
+		load_diag_from_file(DIALOGUE_RESOURCE)
+		if run_on_start:
+			start_dialogue()
 	
 	$AnimationPlayer.play("wiggle")
 
@@ -78,7 +83,6 @@ func end_dialogue():
 	# Disconnect all signals
 	for s in get_signal_connection_list("dialogue_ended"):
 		disconnect(s.signal, s.target, s.method)
-	print(get_signal_connection_list("dialogue_ended"))
 
 func current_character() -> Dictionary:
 	return characters[lines[_line]["character"]]
