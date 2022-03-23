@@ -166,4 +166,5 @@ anims/RESET = SubResource( 6 )
 anims/Stand = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
 texture = ExtResource( 2 )

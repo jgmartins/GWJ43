@@ -197,10 +197,11 @@ _next_key = 28
 [node name="Level" type="Node2D"]
 
 [node name="Character" parent="." groups=["Player"] instance=ExtResource( 1 )]
-position = Vector2( 233, 682 )
+position = Vector2( 264, 688 )
+z_index = -1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 183, 607 )
+position = Vector2( 214, 612.996 )
 z_index = 3
 current = true
 zoom = Vector2( 0.5, 0.5 )
@@ -211,13 +212,13 @@ desired_offset = Vector2( 50, -75 )
 TARGET_NODE = NodePath("../Character")
 
 [node name="Background" type="AnimatedSprite" parent="Camera2D"]
-position = Vector2( 141.75, -51.037 )
-scale = Vector2( 0.312585, 0.312585 )
+position = Vector2( 40.2, -51.9259 )
+scale = Vector2( 0.244198, 0.244198 )
 z_index = -1000
 frames = SubResource( 1 )
 speed_scale = 0.1
 script = ExtResource( 13 )
-PARALLAX_AMNT = Vector2( 200, 100 )
+PARALLAX_AMNT = Vector2( 60, 100 )
 TARGET_NODE = NodePath("../../Character")
 
 [node name="Dialogue" parent="Camera2D" instance=ExtResource( 19 )]
@@ -277,8 +278,9 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
 visible = false
 modulate = Color( 1, 1, 1, 0.3 )
-polygon = PoolVector2Array( 1655.69, 712.905, 1643.81, 943.045, -16.9426, 932.026, 10.4593, 723.063, 27.4284, 718.876, 36.2408, 717.072, 46.066, 716.043, 56.5623, 716.254, 61.9531, 716.961, 67.3903, 717.956, 217.16, 704.388, 333.414, 704.045, 485.187, 716.591, 738.543, 731.712, 863.751, 728.839, 1044, 707.74, 1182.63, 702.076, 1612.93, 716.604 )
+polygon = PoolVector2Array( 1655.69, 712.905, 1643.81, 943.045, -16.9426, 932.026, 10.4593, 723.063, 27.4283, 718.876, 36.2407, 717.073, 46.0659, 716.043, 56.5622, 716.254, 61.953, 716.96, 67.3903, 717.956, 217.16, 704.387, 333.414, 704.045, 485.187, 716.591, 738.542, 731.712, 863.75, 728.839, 1043.99, 707.74, 1182.63, 702.076, 1612.93, 716.604 )
 
 [connection signal="dialogue_ended" from="Camera2D/Dialogue" to="Camera2D/Background" method="start_playing"]
 
+[editable path="Character"]
 [editable path="Camera2D/Dialogue"]
